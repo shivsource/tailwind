@@ -12,10 +12,15 @@ phases:
     commands:
       - echo "Creating dist folder"
       - mkdir -p dist
-      - echo "Building tailwind"
+      - echo "Building Tailwind CSS"
       # - npx tailwindcss -i ./global.css -o ./dist/global.css --minify
+      - echo "Copying all HTML files"
       - cp *.html dist/
-      - cp -r images dist/
+      - echo "Copying images folder (if exists)"
+      - cp -r images dist/ || echo "No images folder found"
+      - echo "Copying appspec.yml and scripts"
+      - cp appspec.yml dist/
+      - cp -r scripts dist/
 
 artifacts:
   files:
