@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 
 files:
-  source: - /
-  destination: /var/www/html/tailwind/
+  - source: /
+    destination: /var/www/html/tailwind/
 
 hooks:
   BeforeInstall:
