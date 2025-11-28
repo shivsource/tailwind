@@ -17,7 +17,7 @@ phases:
       - cp *.html dist/
       - cp -r images dist/
 
-artifact:
+artifacts:
   files:
     - '**/*'
   base-directory: dist  
