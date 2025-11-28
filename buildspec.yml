@@ -1,0 +1,22 @@
+version: 0.0
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+    commands:
+      - echo "Installing Node"
+      - npm install
+
+  build:
+    commands:
+      - echo "Building tailwind"
+      - npx tailwindcss -i ./global.css -0 ./global.css --minify
+      - cp *.html dist/
+      - cp -r images dist/
+
+artifact:
+  files:
+    - '**/*'
+  base-directory: dist  
