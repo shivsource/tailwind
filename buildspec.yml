@@ -13,7 +13,7 @@ phases:
       - echo "Creating dist folder"
       - mkdir -p dist
       - echo "Building tailwind"
-      - npx tailwindcss -i ./global.css -o ./dist/global.css --minify
+      # - npx tailwindcss -i ./global.css -o ./dist/global.css --minify
       - cp *.html dist/
       - cp -r images dist/
 
