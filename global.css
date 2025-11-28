@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* contact us section css */
+@layer utilities {
+    .contact-us {
+        background: linear-gradient(135deg,
+                /* #1f4b99, */
+                rgba(209, 251, 255, .25) 0%, rgba(117, 207, 255, .25) 29.13%, rgba(151, 138, 255, .25) 70.56%);
+        background-size: 1400% 1400%;
+        animation: awsConsoleShift 24s ease-in-out infinite;
+    }
+
+    @keyframes awsConsoleShift {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+}
+
+.container {
+    max-width: 1416px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
