@@ -3,4 +3,15 @@ os: linux
 
 files:
   source: - /
-  destination: /var/www/html/tailwind
+  destination: /var/www/html/tailwind/
+
+hooks:
+  BeforeInstall:
+    - location: scripts/clean_old_files.sh
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: scripts/restart_server.sh
+      timeout: 300
+      runas: root
