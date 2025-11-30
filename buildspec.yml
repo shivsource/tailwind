@@ -14,16 +14,22 @@ phases:
       - mkdir -p dist
       - echo "Building Tailwind CSS"
       # - npx tailwindcss -i ./global.css -o ./dist/global.css --minify
+      
       - echo "Copying all HTML files"
       - cp *.html dist/
+      
       - echo "Copying images folder (if exists)"
       - cp -r images dist/ || echo "No images folder found"
-      - echo "Copying appspec.yml and scripts"
+      
+      - echo "Copying appspec.yml"
       - cp appspec.yml dist/
-      - cp -r scripts dist/
+      
+      - echo "Copying scripts folder"
+      - mkdir -p dist/scripts
+      - cp -r scripts/* dist/scripts/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: dist  
-  discard-paths: yes 
+  base-directory: dist
+  discard-paths: no
